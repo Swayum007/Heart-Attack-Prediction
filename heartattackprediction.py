@@ -35,7 +35,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
-#Model preparation
 
 #LightGBM Classifier
 lgbm = lgb.LGBMClassifier()
@@ -74,6 +73,8 @@ print(xgb_conf_matrix)
 print("\n")
 print("Accuracy of Extreme Gradient Boost:", xgb_acc_score * 100, '\n')
 print(classification_report(y_test, xgb_predicted))
+
+#GNN Classifier
 # Create graph structure (assuming a fully connected graph)
 num_nodes = X_train.shape[0]
 edge_index = torch.tensor([
